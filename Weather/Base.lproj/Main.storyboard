@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,91 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aqua.png" translatesAutoresizingMaskIntoConstraints="NO" id="oBs-zA-v1y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OZ-kw-bPY">
+                                <rect key="frame" x="231" y="50" width="139" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="8iQ-tz-dJq"/>
+                                    <constraint firstAttribute="height" constant="116" id="ENd-Hc-CfN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Eg. Lansing, Seoul" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6h1-mG-beA">
+                                <rect key="frame" x="157" y="209" width="287" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="hA6-of-csK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMG-3j-Ufc">
+                                <rect key="frame" x="210" y="165" width="181" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="WPo-ut-hAr"/>
+                                    <constraint firstAttribute="width" constant="181" id="nJm-3X-DFx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What's the Weather Like?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXe-cb-L3M">
+                                <rect key="frame" x="20" y="340" width="560" height="207"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.98392124368686873" green="0.98392124368686873" blue="0.98392124368686873" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9F-2E-sSu">
+                                <rect key="frame" x="254" y="241" width="93" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="HwB-Nt-vTM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="L4C-F0-vAe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="nzz-DW-VG4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c9M-2F-yWy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x9F-2E-sSu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="41N-Jf-rDH"/>
+                            <constraint firstItem="oBs-zA-v1y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="DEx-ld-49M"/>
+                            <constraint firstItem="9OZ-kw-bPY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GIS-bs-IiU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oBs-zA-v1y" secondAttribute="bottom" id="Jib-1R-NdH"/>
+                            <constraint firstItem="9OZ-kw-bPY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="MLe-0J-FLb"/>
+                            <constraint firstItem="cXe-cb-L3M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TCY-5B-Grl"/>
+                            <constraint firstItem="cXe-cb-L3M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XkN-Mj-1RC"/>
+                            <constraint firstItem="fMG-3j-Ufc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y4f-Mw-jUf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oBs-zA-v1y" secondAttribute="trailing" constant="-20" id="Z98-kR-GRi"/>
+                            <constraint firstItem="cXe-cb-L3M" firstAttribute="top" secondItem="x9F-2E-sSu" secondAttribute="bottom" constant="58" id="bTi-ra-skH"/>
+                            <constraint firstItem="6h1-mG-beA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="189" id="gLg-da-qaF"/>
+                            <constraint firstItem="cXe-cb-L3M" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kbx-Pb-1ch"/>
+                            <constraint firstItem="x9F-2E-sSu" firstAttribute="top" secondItem="6h1-mG-beA" secondAttribute="bottom" constant="8" id="pgM-VU-q0L"/>
+                            <constraint firstItem="6h1-mG-beA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="two-1S-sqO"/>
+                            <constraint firstItem="oBs-zA-v1y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vWB-tO-Ijt"/>
+                            <constraint firstItem="fMG-3j-Ufc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="145" id="yEl-hC-NUF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="6h1-mG-beA" id="Ym0-kc-jpq"/>
+                        <outlet property="resultLabel" destination="cXe-cb-L3M" id="fca-vk-pTE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="440" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Aqua.png" width="1440" height="900"/>
+    </resources>
 </document>
